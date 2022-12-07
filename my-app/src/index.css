@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* colors */
+  --strong: #a4ffaf;
+  --too-weak: #f64a4a;
+  --weak: #fb7c58;
+  --medium: #f8cd65;
+  --text-color: #e6e5ea;
+  --strength-text-color: #817d92;
+  --strength-bar-background-color: #18171f;
+  --background-color: #24232c;
+
+  /* font-sizes and font-weight */
+  --password-mobile-size: 1.5rem;
+  --password-weight: 700;
+  --password-line-height: 2rem;
+  --text-mobile-size: 1rem;
+  --text-line-height: 1.4rem;
+}
