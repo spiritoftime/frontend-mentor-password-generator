@@ -1,0 +1,31 @@
+.checkbox {
+  display: flex;
+  gap: 1rem;
+}
+
+.input {
+  appearance: none;
+  margin: 0;
+  font: inherit;
+
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid var(--strong);
+  background-color: var(--strong);
+  color: var(--strength-bar-background-color);
+  display: grid;
+  place-content: center;
+}
+.input::before {
+  content: "";
+  width: 0.9em;
+  height: 0.9em;
+  transform: scale(0);
+  transition: 30ms transform ease-in-out;
+  box-shadow: inset 1em 1em black;
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}

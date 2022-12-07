@@ -1,7 +1,13 @@
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  min-block-size: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "JetBrains Mono", monospace;
 }
 :root {
   /* colors */
@@ -11,9 +17,9 @@ body {
   --medium: #f8cd65;
   --text-color: #e6e5ea;
   --strength-text-color: #817d92;
-  --strength-bar-background-color: #18171f;
-  --background-color: #24232c;
+  --strength-bar-background-color: #24232c;
 
+  --background-color: #18171f;
   /* font-sizes and font-weight */
   --password-mobile-size: 1.5rem;
   --password-weight: 700;

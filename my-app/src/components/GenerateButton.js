@@ -1,11 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import classes from "../css/passwordbar.module.css";
 const GenerateButton = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <button className={classes.btn}>
+      GENERATE <span>&#8594;</span>
+    </button>
+  );
+};
 
-export default GenerateButton
+export default GenerateButton;

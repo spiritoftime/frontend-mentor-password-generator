@@ -1,0 +1,11 @@
+.strength-div {
+  display: flex;
+  background-color: var(--strength-bar-background-color);
+  gap: 0.5rem;
+  align-items: center;
+}
+.strength-display {
+  width: 0.5rem;
+  height: 1.7rem;
+  background-color: var(--weak);
+}

@@ -1,0 +1,5 @@
+.text {
+  font-size: var(--text-mobile-size);
+  line-height: var(--text-line-height);
+  color: var(--strength-text-color);
+}

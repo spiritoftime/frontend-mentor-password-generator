@@ -1,12 +1,7 @@
-import React from 'react'
+import React from "react";
+import classes from "../css/app.module.css";
+const PasswordApp = ({ children }) => {
+  return <div className={classes["password_app"]}>{children}</div>;
+};
 
-const PasswordApp = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default PasswordApp
-
+export default PasswordApp;

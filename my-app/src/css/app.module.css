@@ -1,0 +1,10 @@
+.password_app {
+  display: flex;
+  margin: 4%;
+  flex-direction: column;
+}
+.toggle-div {
+  /* border: 3px solid var(--strength-bar-background-color); */
+  background-color: var(--strength-bar-background-color);
+  padding: 4%;
+}
