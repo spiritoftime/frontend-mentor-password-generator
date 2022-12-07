@@ -18,9 +18,7 @@ function reducer(state, action) {
   return { ...state, ...action };
 }
 function App() {
-  const passwordLengthHandler = (length) => {
-
-  };
+  const passwordLengthHandler = (length) => {};
   const [isChecked, dispatchCheckBox] = useReducer(reducer, {
     0: false,
     1: false,
@@ -29,7 +27,9 @@ function App() {
   });
   return (
     <PasswordApp>
-      <Text></Text>
+      <div className={classes.text}>
+        <Text></Text>
+      </div>
       <ShowPassword></ShowPassword>
       <div className={classes["toggle-div"]}>
         <PasswordBar getLength={passwordLengthHandler}></PasswordBar>

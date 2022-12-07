@@ -1,0 +1,25 @@
+.btn {
+  display: block;
+  width: 100%;
+  color: var(--background-color);
+  background-color: var(--strong);
+  border: 1px solid var(--strong);
+  padding: 1rem 0;
+  font-weight: 700;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: var(--background-color);
+  border: 3px solid var(--strong);
+  color: var(--strong);
+  cursor: pointer;
+}
+
+.icon {
+  height: 1rem;
+  margin-left: 1rem;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+}

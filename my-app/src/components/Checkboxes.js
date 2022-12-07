@@ -1,8 +1,8 @@
 import CheckBox from "./CheckBox";
-
+import classes from "../css/checkboxes.module.css";
 const Checkboxes = ({ dispatchHandler, checkboxes }) => {
   return (
-    <div>
+    <div className={classes.checkbox}>
       {checkboxes.map((checkbox, idx) => {
         return (
           <CheckBox

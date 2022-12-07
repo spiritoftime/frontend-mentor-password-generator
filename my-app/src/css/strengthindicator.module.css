@@ -1,11 +1,14 @@
 .strength-div {
   display: flex;
-  background-color: var(--strength-bar-background-color);
+  background-color: var(--background-color);
   gap: 0.5rem;
   align-items: center;
+  justify-content: space-around;
+  padding: 3% 0;
 }
-.strength-display {
-  width: 0.5rem;
-  height: 1.7rem;
-  background-color: var(--weak);
+.strengthbar-div {
+  display: flex;
+  justify-content: space-between;
+  width: 38%;
+  align-items: center;
 }
