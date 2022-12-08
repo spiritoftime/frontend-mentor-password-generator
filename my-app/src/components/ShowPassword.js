@@ -3,15 +3,18 @@ import classes from "../css/showpassword.module.css";
 import { useState } from "react";
 const ShowPassword = (props) => {
   const [isHover, setHover] = useState(false);
+  const [clicked, setClicked] = useState(false);
   let classNames = classes.span;
   if (props.password !== "P4$5W0rD!") classNames += ` ${classes.white}`;
   const copyPasswordHandler = () => {
     navigator.clipboard.writeText(props.password);
+    setClicked(true);
   };
   // console.log(props.password);
   return (
     <div className={classes.password_div}>
       <span className={classNames}>{props.password}</span>
+      {clicked && <p className={classes.copied}>COPIED</p>}
       <svg
         onClick={copyPasswordHandler}
         onMouseEnter={() => setHover(true)}
