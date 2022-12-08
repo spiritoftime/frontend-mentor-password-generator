@@ -7,7 +7,7 @@ import Text from "./components/Text";
 import ShowPassword from "./components/ShowPassword";
 import { useCallback, useEffect, useReducer, useState } from "react";
 import classes from "./css/app.module.css";
-
+import checkStrength from "./checkStrength";
 import passwordGenerator from "./generatePassword";
 
 // import { symbols, uppercase, lowercase, numbers } from "./passwordsymbols";
@@ -25,24 +25,29 @@ function reducer(state, action) {
 
 function App() {
   const [password, setPassword] = useState("P4$5W0rD!");
-  const [isReset, setReset] = useState(false)
+  const [isReset, setReset] = useState(false);
+  const [passwordStrength, setStrength] = useState("none");
   const [passwordSpecifications, dispatch] = useReducer(reducer, {
     length: 0,
     Uppercase: false,
     Lowercase: false,
     Numbers: false,
     Symbols: false,
-    
   });
+  // recreate password when passwordSpecifications changed
   useEffect(() => {
     const newPassword = passwordGenerator(passwordSpecifications);
-
     setPassword(newPassword);
   }, [passwordSpecifications]);
-  useEffect(()=>{
-    if (isReset)setPassword(passwordGenerator(passwordSpecifications))
-  },[isReset,passwordSpecifications])
-
+  // regenerate password when button is clicked
+  useEffect(() => {
+    if (isReset) setPassword(passwordGenerator(passwordSpecifications));
+  }, [isReset, passwordSpecifications]);
+  // check the strength of the password
+  useEffect(() => {
+    const strength = checkStrength(password, passwordSpecifications);
+    setStrength(strength);
+  }, [password,passwordSpecifications]);
   return (
     <PasswordApp>
       <div className={classes.text}>
@@ -55,7 +60,7 @@ function App() {
           checkboxes={checkboxes}
           dispatchHandler={dispatch}
         ></Checkboxes>
-        <StrengthIndicator></StrengthIndicator>
+        <StrengthIndicator strength={passwordStrength}></StrengthIndicator>
         <GenerateButton setReset={setReset}></GenerateButton>
       </div>
     </PasswordApp>
