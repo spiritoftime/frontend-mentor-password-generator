@@ -8,7 +8,14 @@
 }
 .strengthbar-div {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 38%;
+  gap: 9%;
   align-items: center;
+}
+.strength {
+  color: var(--strength-text-color);
+}
+.strength-indicator {
+  text-transform: uppercase;
 }

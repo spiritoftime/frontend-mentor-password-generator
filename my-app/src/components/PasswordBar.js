@@ -1,10 +1,10 @@
 import React from "react";
 import classes from "../css/passwordbar.module.css";
 import { useState } from "react";
-const PasswordBar = ({ dispatchHandler:dispatch }) => {
+const PasswordBar = ({ dispatchHandler: dispatch }) => {
   const [number, setNumber] = useState(0);
   const toggleInputHandler = (e) => {
-    const inputFill = window.getComputedStyle(e.target, "::after");
+    // const inputFill = window.getComputedStyle(e.target, "::after");
     // console.log(inputFill);
     e.target.style.setProperty("--emptyVariable", `${e.target.value * 5}%`);
     // inputFill.width = `${e.target.value * 10}%`;

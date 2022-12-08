@@ -1,6 +1,10 @@
 .checkbox {
   display: flex;
   gap: 1rem;
+  align-items: center;
+}
+.label {
+  font-size: clamp(1rem, 1rem + 0.4vw, 1.5rem);
 }
 
 .input {

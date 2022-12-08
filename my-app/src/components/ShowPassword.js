@@ -1,10 +1,13 @@
 import React from "react";
 import classes from "../css/showpassword.module.css";
 const ShowPassword = (props) => {
+  let classNames = classes.span;
+  if (props.password !== "P4$5W0rD!") classNames += ` ${classes.white}`;
+
   // console.log(props.password);
   return (
     <div className={classes.password_div}>
-      <span className={classes.span}>{props.password}</span>
+      <span className={classNames}>{props.password}</span>
       <svg
         className={classes.icon}
         xmlns="http://www.w3.org/2000/svg"

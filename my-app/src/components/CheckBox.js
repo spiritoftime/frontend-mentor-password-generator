@@ -16,7 +16,7 @@ const CheckBox = (props) => {
         id={props.id}
         onClick={toggleCheckBoxHandler}
       ></input>
-      <p>{props.content}</p>
+      <p className={classes.label}>{props.content}</p>
     </div>
   );
 };

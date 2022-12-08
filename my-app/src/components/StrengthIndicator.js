@@ -4,13 +4,15 @@ import StrengthBar from "./StrengthBar";
 const StrengthIndicator = ({ strength }) => {
   return (
     <div className={classes["strength-div"]}>
-      <p>STRENGTH</p>
+      <p className={classes["strength"]}>STRENGTH</p>
       <div className={classes["strengthbar-div"]}>
-        <p>{strength}</p>
-        <StrengthBar strength={strength}></StrengthBar>
-        <StrengthBar strength={strength}></StrengthBar>
-        <StrengthBar strength={strength}></StrengthBar>
-        <StrengthBar strength={strength}></StrengthBar>
+        <p className={classes["strength-indicator"]}>{strength}</p>
+        <div className={classes["strengthbar-div"]}>
+          <StrengthBar strength={strength}></StrengthBar>
+          <StrengthBar strength={strength}></StrengthBar>
+          <StrengthBar strength={strength}></StrengthBar>
+          <StrengthBar strength={strength}></StrengthBar>
+        </div>
       </div>
     </div>
   );
