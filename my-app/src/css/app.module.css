@@ -3,6 +3,22 @@
   padding: 4%;
   flex-direction: column;
 }
+@media (min-width: 640px) {
+  .password_app {
+    width: 60%;
+    margin: auto;
+  }
+}
+@media (min-width: 1000px) {
+  .password_app {
+    width: 51%;
+  }
+}
+@media (min-width: 1200px) {
+  .password_app {
+    width: 44%;
+  }
+}
 .toggle-div {
   /* border: 3px solid var(--strength-bar-background-color); */
   background-color: var(--strength-bar-background-color);
@@ -12,7 +28,5 @@
   gap: 1rem;
 }
 .text {
-  width: 51%;
-  margin: auto;
   text-align: center;
 }
