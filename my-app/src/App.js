@@ -25,19 +25,23 @@ function reducer(state, action) {
 
 function App() {
   const [password, setPassword] = useState("P4$5W0rD!");
+  const [isReset, setReset] = useState(false)
   const [passwordSpecifications, dispatch] = useReducer(reducer, {
     length: 0,
     Uppercase: false,
     Lowercase: false,
     Numbers: false,
     Symbols: false,
+    
   });
   useEffect(() => {
     const newPassword = passwordGenerator(passwordSpecifications);
-    console.log(newPassword);
 
     setPassword(newPassword);
   }, [passwordSpecifications]);
+  useEffect(()=>{
+    if (isReset)setPassword(passwordGenerator(passwordSpecifications))
+  },[isReset,passwordSpecifications])
 
   return (
     <PasswordApp>
@@ -52,7 +56,7 @@ function App() {
           dispatchHandler={dispatch}
         ></Checkboxes>
         <StrengthIndicator></StrengthIndicator>
-        <GenerateButton></GenerateButton>
+        <GenerateButton setReset={setReset}></GenerateButton>
       </div>
     </PasswordApp>
   );

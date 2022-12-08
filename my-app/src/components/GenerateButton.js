@@ -1,6 +1,6 @@
 import { useState } from "react";
 import classes from "../css/generatebutton.module.css";
-const GenerateButton = () => {
+const GenerateButton = (props) => {
   const [isHover, setHover] = useState(false);
   return (
     <button
@@ -8,8 +8,8 @@ const GenerateButton = () => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div className={classes.flex}>
-        GENERATE
+      <div onClick={props.setReset} className={classes.flex}>
+        GENERATE AGAIN
         <svg
           className={classes.icon}
           xmlns="http://www.w3.org/2000/svg"
