@@ -25,6 +25,8 @@ function reducer(state, action) {
 
 function App() {
   const [password, setPassword] = useState("P4$5W0rD!");
+  const [clicked, setClicked] = useState(false);
+  const [copied, setCopied] = useState(false);
   const [isReset, setReset] = useState(false);
   const [passwordStrength, setStrength] = useState("none");
   const [passwordSpecifications, dispatch] = useReducer(reducer, {
@@ -38,22 +40,27 @@ function App() {
   useEffect(() => {
     const newPassword = passwordGenerator(passwordSpecifications);
     setPassword(newPassword);
+    setCopied(false);
   }, [passwordSpecifications]);
   // regenerate password when button is clicked
   useEffect(() => {
-    if (isReset) setPassword(passwordGenerator(passwordSpecifications));
+    if (isReset) {
+      setPassword(passwordGenerator(passwordSpecifications));
+      setCopied(false);
+    }
   }, [isReset, passwordSpecifications]);
   // check the strength of the password
   useEffect(() => {
     const strength = checkStrength(password, passwordSpecifications);
     setStrength(strength);
-  }, [password,passwordSpecifications]);
+  }, [password, passwordSpecifications]);
+
   return (
     <PasswordApp>
       <div className={classes.text}>
         <Text></Text>
       </div>
-      <ShowPassword password={password}></ShowPassword>
+      <ShowPassword setCopied={setCopied} copied={copied} password={password}></ShowPassword>
       <div className={classes["toggle-div"]}>
         <PasswordBar dispatchHandler={dispatch}></PasswordBar>
         <Checkboxes

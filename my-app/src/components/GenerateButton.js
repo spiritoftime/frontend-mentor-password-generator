@@ -4,11 +4,12 @@ const GenerateButton = (props) => {
   const [isHover, setHover] = useState(false);
   return (
     <button
+      onClick={props.setReset}
       className={classes.btn}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div onClick={props.setReset} className={classes.flex}>
+      <div className={classes.flex}>
         GENERATE AGAIN
         <svg
           className={classes.icon}
