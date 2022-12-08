@@ -6,8 +6,8 @@ const Checkboxes = ({ dispatchHandler, checkboxes }) => {
       {checkboxes.map((checkbox, idx) => {
         return (
           <CheckBox
-            id={idx}
-            key={idx}
+            id={checkbox.split(" ")[1]}
+            key={checkbox.split(" ")[1]}
             content={checkbox}
             dispatchHandler={dispatchHandler}
           ></CheckBox>
