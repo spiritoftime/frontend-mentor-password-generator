@@ -26,7 +26,6 @@ export default function passwordGenerator(
     if (value === true) numTrue += 1;
     return numTrue;
   }, 0);
-  // how do i improve this code?
   if (numTrue === 0 || length === 0) return "P4$5W0rD!";
   let generatedPassword = "";
 

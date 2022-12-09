@@ -4,24 +4,24 @@ import { useState } from "react";
 const PasswordBar = ({ dispatchHandler: dispatch }) => {
   const [number, setNumber] = useState(0);
   const toggleInputHandler = (e) => {
-    // const inputFill = window.getComputedStyle(e.target, "::after");
-    // console.log(inputFill);
+    // change the width of the green fill as we increase the length in the slider
     e.target.style.setProperty("--emptyVariable", `${e.target.value * 5}%`);
-    // inputFill.width = `${e.target.value * 10}%`;
+
     const action = {};
     action.length = +e.target.value;
     dispatch(action);
     setNumber(e.target.value);
   };
-  // define a function here to get the number in the input
+
   return (
     <div className={classes["flex-container"]}>
       <div className={classes["bar-description"]}>
-        <p>Character Length</p>
+        <label htmlFor="passwordLength">Character Length</label>
         <p className={classes.length}>{number}</p>
       </div>
       <input
         className={classes.input}
+        id="passwordLength"
         type="range"
         name="length"
         min="0"
