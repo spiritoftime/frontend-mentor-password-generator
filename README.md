@@ -8,6 +8,7 @@ What i learnt: it was a great opportunity to try and apply what i have learnt fr
 2. every sibling item needs a key prop to help react identify what items changed
 3. for useEffect, only variables outside of the useEffect scope & within the component function need to be added as a dependency
 4. inputs should always have a corresponding label in order to improve accessibility.
+5. we should not be putting divs inside of a button. previously, i placed a div inside the generate button and set that to flex, jsutify-content:center in order to center the svg and the text both vertically and horizontally. However, i learnt that we should not do so; and we can achieve same intended effect by setting vertical align: bottom on the icon.
 
 What i think can be improved (currently attempting to do them in refactor branch):
 
