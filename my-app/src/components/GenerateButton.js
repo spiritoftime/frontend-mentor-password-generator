@@ -12,7 +12,7 @@ const GenerateButton = (props) => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div className={classes.flex}>
+
         GENERATE AGAIN
         <svg
           className={classes.icon}
@@ -24,7 +24,7 @@ const GenerateButton = (props) => {
             d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"
           ></path>
         </svg>
-      </div>
+
     </button>
   );
 };
