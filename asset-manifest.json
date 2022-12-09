@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/frontend-mentor-password-generator/static/css/main.f8cb5d1d.css",
-    "main.js": "/frontend-mentor-password-generator/static/js/main.d112ae22.js",
+    "main.css": "/frontend-mentor-password-generator/static/css/main.a5522a64.css",
+    "main.js": "/frontend-mentor-password-generator/static/js/main.5e3812eb.js",
     "static/js/787.28cb0dcd.chunk.js": "/frontend-mentor-password-generator/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/frontend-mentor-password-generator/index.html",
-    "main.f8cb5d1d.css.map": "/frontend-mentor-password-generator/static/css/main.f8cb5d1d.css.map",
-    "main.d112ae22.js.map": "/frontend-mentor-password-generator/static/js/main.d112ae22.js.map",
+    "main.a5522a64.css.map": "/frontend-mentor-password-generator/static/css/main.a5522a64.css.map",
+    "main.5e3812eb.js.map": "/frontend-mentor-password-generator/static/js/main.5e3812eb.js.map",
     "787.28cb0dcd.chunk.js.map": "/frontend-mentor-password-generator/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8cb5d1d.css",
-    "static/js/main.d112ae22.js"
+    "static/css/main.a5522a64.css",
+    "static/js/main.5e3812eb.js"
   ]
 }
