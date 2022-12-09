@@ -36,6 +36,7 @@ function App() {
     Numbers: false,
     Symbols: false,
   });
+  // is there a way to manage all these useEffects?
   // recreate password when passwordSpecifications changed
   useEffect(() => {
     const newPassword = passwordGenerator(passwordSpecifications);
