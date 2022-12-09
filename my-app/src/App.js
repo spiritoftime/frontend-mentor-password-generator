@@ -5,7 +5,7 @@ import PasswordBar from "./components/PasswordBar";
 import StrengthIndicator from "./components/StrengthIndicator";
 import Text from "./components/Text";
 import ShowPassword from "./components/ShowPassword";
-import { useCallback, useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import classes from "./css/app.module.css";
 import checkStrength from "./checkStrength";
 import passwordGenerator from "./generatePassword";
@@ -25,7 +25,7 @@ function reducer(state, action) {
 
 function App() {
   const [password, setPassword] = useState("P4$5W0rD!");
-  const [clicked, setClicked] = useState(false);
+
   const [copied, setCopied] = useState(false);
   const [isReset, setReset] = useState(false);
   const [passwordStrength, setStrength] = useState("none");
@@ -60,7 +60,11 @@ function App() {
       <div className={classes.text}>
         <Text></Text>
       </div>
-      <ShowPassword setCopied={setCopied} copied={copied} password={password}></ShowPassword>
+      <ShowPassword
+        setCopied={setCopied}
+        copied={copied}
+        password={password}
+      ></ShowPassword>
       <div className={classes["toggle-div"]}>
         <PasswordBar dispatchHandler={dispatch}></PasswordBar>
         <Checkboxes
