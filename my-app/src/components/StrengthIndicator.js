@@ -9,7 +9,6 @@ const StrengthIndicator = ({ strength }) => {
     switch (strength) {
       case "too weak":
         setStrengths(["too weak", "none", "none", "none"]);
-
         break;
       case "weak":
         setStrengths(["weak", "weak", "none", "none"]);
