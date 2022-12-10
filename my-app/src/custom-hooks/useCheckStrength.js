@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
+import { useEffect, useState } from "react";
+import passwordGenerator from "../generatePassword";
+import checkStrength from "../checkStrength";
+const useCheckStrength = (password, passwordSpecifications) => {
+  const [passwordStrength, setStrength] = useState("none");
 
-const useCheckStrength = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  // check the strength of the password
+  useEffect(() => {
+    const strength = checkStrength(password, passwordSpecifications);
+    setStrength(strength);
+  }, [password, passwordSpecifications]);
 
-export default useCheckStrength
+  return { passwordStrength };
+};
+
+export default useCheckStrength;

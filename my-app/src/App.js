@@ -5,10 +5,11 @@ import PasswordBar from "./components/PasswordBar";
 import StrengthIndicator from "./components/StrengthIndicator";
 import Text from "./components/Text";
 import ShowPassword from "./components/ShowPassword";
-import { useCallback, useEffect, useReducer, useState } from "react";
+import { useReducer } from "react";
 import classes from "./css/app.module.css";
-import checkStrength from "./checkStrength";
-import passwordGenerator from "./generatePassword";
+
+import useNewPassword from "./custom-hooks/useNewPassword";
+import useCheckStrength from "./custom-hooks/useCheckStrength";
 
 // import { symbols, uppercase, lowercase, numbers } from "./passwordsymbols";
 
@@ -24,10 +25,6 @@ function reducer(state, action) {
 }
 
 function App() {
-  const [password, setPassword] = useState("P4$5W0rD!");
-
-  const [copied, setCopied] = useState(false);
-  const [passwordStrength, setStrength] = useState("none");
   const [passwordSpecifications, dispatch] = useReducer(reducer, {
     length: 0,
     Uppercase: false,
@@ -35,26 +32,14 @@ function App() {
     Numbers: false,
     Symbols: false,
   });
-  // is there a way to manage all these useEffects?
-  // recreate password when passwordSpecifications changed
-  useEffect(() => {
-    const newPassword = passwordGenerator(passwordSpecifications);
-    setPassword(newPassword);
-    setCopied(false);
-  }, [passwordSpecifications]);
-  // regenerate password when button is clicked
-  const resetPassword = () => {
-    const newPassword = passwordGenerator(passwordSpecifications);
-    setPassword(newPassword);
-    setCopied(false);
-  };
 
-  // check the strength of the password
-  useEffect(() => {
-    const strength = checkStrength(password, passwordSpecifications);
-    setStrength(strength);
-  }, [password, passwordSpecifications]);
-
+  const { password, setCopied, copied, resetPassword } = useNewPassword(
+    passwordSpecifications
+  );
+  const { passwordStrength } = useCheckStrength(
+    password,
+    passwordSpecifications
+  );
   return (
     <PasswordApp>
       <div className={classes.text}>
