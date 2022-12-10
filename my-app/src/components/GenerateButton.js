@@ -7,7 +7,7 @@ const GenerateButton = (props) => {
       // so right now generateButton is working even though i am not passing anything into setReset. My guess is that
       // even if i do not pass anything into setReset, the isReset state is somehow updated, causing the useEffect to run.
       // is there any way i could perhaps refactor this?
-      onClick={props.setReset}
+      onClick={props.resetPassword}
       className={classes.btn}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
