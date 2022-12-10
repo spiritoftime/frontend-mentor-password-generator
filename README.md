@@ -19,5 +19,13 @@ What i think can be improved (currently attempting to do them in refactor branch
 - so right now generateButton is working even though i am not passing anything into setReset. My guess is that
   even if i do not pass anything into setReset, the isReset state is somehow updated, causing the useEffect to run.
   is there any way i could perhaps refactor this?
+ EDIT: useEffect was working because i passed in setReset as the state for isReset. setReset constantly changes whenever i clicked the button, as seen in the debugging console)
+ Initial state pointing to setReset:
+ ![image](https://user-images.githubusercontent.com/98036884/206841094-1613f0c8-26ab-4fd7-92d2-fed4aa4817b3.png)
+when the button was clicked, state is still pointing to setReset, but setReset changed:
+![image](https://user-images.githubusercontent.com/98036884/206841120-7c564a82-df20-4f9f-b2f1-35bfc259d9a6.png)
+Since the function changes, isReset changes, causing useEffect to run.
 
 2. is there a better way to manage those useEffects?
+EDIT: refactored them into two separate custom hooks
+
